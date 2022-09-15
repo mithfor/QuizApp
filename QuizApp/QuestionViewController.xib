@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,25 +17,31 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTR-oy-Trr">
-                    <rect key="frame" x="186" y="80" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UTR-oy-Trr">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yac-Mp-i5K">
-                    <rect key="frame" x="20" y="121" width="374" height="231"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yac-Mp-i5K">
+                    <rect key="frame" x="0.0" y="93" width="375" height="574"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="140.57971014492756" y="130.58035714285714"/>
+            <constraints>
+                <constraint firstItem="yac-Mp-i5K" firstAttribute="leading" secondItem="UTR-oy-Trr" secondAttribute="leading" id="0Q2-ev-0Ve"/>
+                <constraint firstItem="yac-Mp-i5K" firstAttribute="trailing" secondItem="UTR-oy-Trr" secondAttribute="trailing" id="Dvi-eU-JUM"/>
+                <constraint firstItem="yac-Mp-i5K" firstAttribute="top" secondItem="UTR-oy-Trr" secondAttribute="bottom" constant="24" id="EU6-sn-K03"/>
+                <constraint firstItem="yac-Mp-i5K" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="rZS-z7-qgR"/>
+                <constraint firstItem="yac-Mp-i5K" firstAttribute="top" secondItem="UTR-oy-Trr" secondAttribute="bottom" constant="24" id="sKX-Ft-mP4"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="129.98500749625188"/>
         </view>
     </objects>
     <resources>
