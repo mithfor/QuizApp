@@ -8,6 +8,7 @@
 import UIKit
 
 struct PresentableAnswer {
+    let question: String
     let isCorrect: Bool
 }
 

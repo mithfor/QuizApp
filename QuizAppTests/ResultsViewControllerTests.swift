@@ -21,14 +21,22 @@ class ResultsViewControllerTests: XCTestCase {
     }
 
     func test_viewDidLoad_withCorrectAnswer_renderCorrectAnswerCall() {
-        let sut = makeSUT(answers: [PresentableAnswer(isCorrect: true)])
+        let sut = makeSUT(answers: [PresentableAnswer(question: "Q1", isCorrect: true)])
         let cell = sut.tableView.cell(at: 0) as? CorrectAnswerCell
 
         XCTAssertNotNil(cell)
     }
     
+//    func test_viewDidLoad_withCorrectAnswer_renderQuestionText() {
+//    let answer = PresentableAnswer(question: "Q1", isCorrect: true))
+//        let sut = makeSUT(answers: [answer])
+//        let cell = sut.tableView.cell(at: 0) as? CorrectAnswerCell
+//
+//        XCTAssertEqual(cell.questionLabel, "Q1")
+//    }
+         
     func test_viewDidLoad_withWrongAnswer_renderWrongAnswerCall() {
-        let sut = makeSUT(answers: [PresentableAnswer(isCorrect: false)])
+        let sut = makeSUT(answers: [PresentableAnswer(question: "Q1", isCorrect: false)])
 
         let cell = sut.tableView.cell(at: 0) as? WrongAnswerCell
 
@@ -44,7 +52,7 @@ class ResultsViewControllerTests: XCTestCase {
     }
     
     private func makeDummyAnswer() -> PresentableAnswer {
-        return PresentableAnswer(isCorrect: false)
+        return PresentableAnswer(question: "Q1", isCorrect: false)
     }
 }
  
