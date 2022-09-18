@@ -19,6 +19,7 @@
 		889FF90F28D3732D00F5ACAF /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889FF90E28D3732D00F5ACAF /* ResultsViewController.xib */; };
 		889FF91328D3734E00F5ACAF /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889FF90928D36CF900F5ACAF /* ResultsViewController.swift */; };
 		889FF91B28D3820300F5ACAF /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889FF91A28D3820300F5ACAF /* TableViewHelpers.swift */; };
+		88A72E1328D715C700E0F14E /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A72E1228D715C700E0F14E /* CorrectAnswerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		889FF90928D36CF900F5ACAF /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		889FF90E28D3732D00F5ACAF /* ResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
 		889FF91A28D3820300F5ACAF /* TableViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
+		88A72E1228D715C700E0F14E /* CorrectAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CorrectAnswerCell.xib; path = QuizAppTests/CorrectAnswerCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				889FF8FC28D31C8900F5ACAF /* QuestionViewController.xib */,
 				889FF90928D36CF900F5ACAF /* ResultsViewController.swift */,
 				889FF90E28D3732D00F5ACAF /* ResultsViewController.xib */,
+				88A72E1228D715C700E0F14E /* CorrectAnswerCell.xib */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				8815DA5428AC14B10084896D /* LaunchScreen.storyboard in Resources */,
 				8815DA5128AC14B10084896D /* Assets.xcassets in Resources */,
 				889FF8FD28D31C8900F5ACAF /* QuestionViewController.xib in Resources */,
+				88A72E1328D715C700E0F14E /* CorrectAnswerCell.xib in Resources */,
 				889FF90F28D3732D00F5ACAF /* ResultsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

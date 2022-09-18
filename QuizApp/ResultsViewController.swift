@@ -9,11 +9,14 @@ import UIKit
 
 struct PresentableAnswer {
     let question: String
+    let answer: String
     let isCorrect: Bool
 }
 
 class CorrectAnswerCell: UITableViewCell {
+    @IBOutlet weak var questionLabel: UILabel!
     
+    @IBOutlet weak var answerLabel: UILabel!
 }
 
 class WrongAnswerCell: UITableViewCell {
@@ -37,8 +40,10 @@ class ResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.dataSource = self
         headerLabel.text = summary
+        tableView.register(UINib(nibName: "CorrectAnswerCell", bundle: nil), forCellReuseIdentifier: "CorrectAnswerCell")
     }
 }
 
@@ -50,8 +55,12 @@ extension ResultsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let answer = answers[indexPath.row]
-        return answer.isCorrect ? CorrectAnswerCell() : WrongAnswerCell()
+         if answer.isCorrect {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectAnswerCell") as! CorrectAnswerCell
+            cell.questionLabel.text = answer.question
+            cell.answerLabel.text = answer.answer
+            return cell
+        }
+        return WrongAnswerCell()
     }
-    
-    
 }

@@ -77,7 +77,7 @@ class QuestionViewControllerTest: XCTestCase {
         sut.tableView.allowsMultipleSelection = true
         sut.tableView.select(row: 0)
         XCTAssertEqual(receivedAnswer, ["A1"])
-        
+         
         sut.tableView.deselect(row: 0)
         XCTAssertEqual(receivedAnswer, [])
     }
