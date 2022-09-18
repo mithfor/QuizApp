@@ -7,25 +7,6 @@
 
 import UIKit
 
-struct PresentableAnswer {
-    let question: String
-    let answer: String
-    let isCorrect: Bool
-}
-
-class CorrectAnswerCell: UITableViewCell {
-    @IBOutlet weak var questionLabel: UILabel!
-    
-    @IBOutlet weak var answerLabel: UILabel!
-}
-
-class WrongAnswerCell: UITableViewCell {
-    
-    @IBOutlet weak var questionLabel: UILabel!
-    
-    @IBOutlet weak var correctAnswerLabel: UILabel!
-}
-
 class ResultsViewController: UIViewController {
     
     var summary = ""
@@ -45,9 +26,11 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.allowsSelection = false
+        tableView.rowHeight = UITableView.automaticDimension
         headerLabel.text = summary
-        tableView.register(UINib(nibName: "CorrectAnswerCell", bundle: nil), forCellReuseIdentifier: "CorrectAnswerCell")
-        tableView.register(UINib(nibName: "WrongAnswerCell", bundle: nil), forCellReuseIdentifier: "WrongAnswerCell")
+        tableView.register(CorrectAnswerCell.self)
+        tableView.register(WrongAnswerCell.self)
     }
 }
 
@@ -56,26 +39,35 @@ extension ResultsViewController: UITableViewDataSource {
         return answers.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let answer = answers[indexPath.row]
+        if answer.wrongAnswer == nil {
+            return correctAnswerCell(for: answer)
+        }
+        return wrongAnswerCell(for: answer)
+    }
+    
     fileprivate func correctAnswerCell(for answer: PresentableAnswer) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectAnswerCell") as! CorrectAnswerCell
+        let cell = tableView.dequeueReusableCell(CorrectAnswerCell.self)!
         cell.questionLabel.text = answer.question
         cell.answerLabel.text = answer.answer
         return cell
     }
     
     fileprivate func wrongAnswerCell(for answer: PresentableAnswer) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WrongAnswerCell") as! WrongAnswerCell
+        let cell = tableView.dequeueReusableCell(WrongAnswerCell.self)!
         cell.questionLabel.text = answer.question
         cell.correctAnswerLabel.text = answer.answer
+        cell.wrongAnswerLabel.text = answer.wrongAnswer
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let answer = answers[indexPath.row]
-         if answer.isCorrect {
-            return correctAnswerCell(for: answer)
-        }
-        return wrongAnswerCell(for: answer)
+}
+
+extension ResultsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return answers[indexPath.row].wrongAnswer == nil ? 70 : 90
     }
 }
+
+

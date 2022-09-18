@@ -16,10 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        let viewController = QuestionViewController(question: "A question?", options: ["Option 1", "Option 2"]) {
-            print($0)
-        }
-        
+        let viewController = ResultsViewController(summary: "You got 1/2 correct", answers: [PresentableAnswer(question: "Question??", answer: "Yeah!", wrongAnswer: nil),
+        PresentableAnswer(question: "Another question??", answer: "Hell yeah!", wrongAnswer: "Hell no!")])
+
         _ = viewController.view
         
         viewController.tableView.allowsMultipleSelection = false
