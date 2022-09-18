@@ -14,6 +14,7 @@
 		8815DA6A28AC14B20084896D /* QuizAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815DA6928AC14B20084896D /* QuizAppUITests.swift */; };
 		8815DA8C28AC16F80084896D /* QuestionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815DA8B28AC16F80084896D /* QuestionViewControllerTests.swift */; };
 		8815DA9128AC17ED0084896D /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815DA9028AC17ED0084896D /* QuestionViewController.swift */; };
+		8876FD7B28D7225400B4BA3C /* WrongAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8876FD7A28D7225400B4BA3C /* WrongAnswerCell.xib */; };
 		889FF8FD28D31C8900F5ACAF /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889FF8FC28D31C8900F5ACAF /* QuestionViewController.xib */; };
 		889FF90228D36B0B00F5ACAF /* ResultsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889FF90128D36B0B00F5ACAF /* ResultsViewControllerTests.swift */; };
 		889FF90F28D3732D00F5ACAF /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889FF90E28D3732D00F5ACAF /* ResultsViewController.xib */; };
@@ -53,6 +54,7 @@
 		8815DA6B28AC14B20084896D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8815DA8B28AC16F80084896D /* QuestionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewControllerTests.swift; sourceTree = "<group>"; };
 		8815DA9028AC17ED0084896D /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		8876FD7A28D7225400B4BA3C /* WrongAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongAnswerCell.xib; sourceTree = "<group>"; };
 		889FF8FC28D31C8900F5ACAF /* QuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
 		889FF90128D36B0B00F5ACAF /* ResultsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerTests.swift; sourceTree = "<group>"; };
 		889FF90928D36CF900F5ACAF /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				8815DA9028AC17ED0084896D /* QuestionViewController.swift */,
 				889FF8FC28D31C8900F5ACAF /* QuestionViewController.xib */,
 				889FF90928D36CF900F5ACAF /* ResultsViewController.swift */,
+				8876FD7A28D7225400B4BA3C /* WrongAnswerCell.xib */,
 				889FF90E28D3732D00F5ACAF /* ResultsViewController.xib */,
 				88A72E1228D715C700E0F14E /* CorrectAnswerCell.xib */,
 			);
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8815DA5428AC14B10084896D /* LaunchScreen.storyboard in Resources */,
+				8876FD7B28D7225400B4BA3C /* WrongAnswerCell.xib in Resources */,
 				8815DA5128AC14B10084896D /* Assets.xcassets in Resources */,
 				889FF8FD28D31C8900F5ACAF /* QuestionViewController.xib in Resources */,
 				88A72E1328D715C700E0F14E /* CorrectAnswerCell.xib in Resources */,

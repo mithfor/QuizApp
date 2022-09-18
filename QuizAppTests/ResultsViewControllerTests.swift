@@ -19,31 +19,28 @@ class ResultsViewControllerTests: XCTestCase {
         XCTAssertEqual(makeSUT(answers: []).tableView.numberOfRows(inSection: 0), 0)
         XCTAssertEqual(makeSUT(answers: [makeDummyAnswer()]).tableView.numberOfRows(inSection: 0), 1)
     }
-
-    func test_viewDidLoad_withCorrectAnswer_renderCorrectAnswerCell() {
-        let sut = makeSUT(answers: [makeAnswer(isCorrect: true)])
+    
+    func test_viewDidLoad_withCorrectAnswer_configuresCell() {
+        let answer = makeAnswer(question: "Q1", answer: "A1", isCorrect: true)
+        let sut = makeSUT(answers: [answer])
         let cell = sut.tableView.cell(at: 0) as? CorrectAnswerCell
-
-        XCTAssertNotNil(cell)
-    }
-    
-    func test_viewDidLoad_withCorrectAnswer_renderQuestionText() {
-    let answer = makeAnswer(question: "Q1", isCorrect: true)
-        let sut = makeSUT(answers: [answer])
-        let cell = sut.tableView.cell(at: 0) as! CorrectAnswerCell
-
-        XCTAssertEqual(cell.questionLabel.text, "Q1")
-    }
-    
-    func test_viewDidLoad_withCorrectAnswer_renderAnswerText() {
-        let answer = makeAnswer(answer: "A1", isCorrect: true)
-        let sut = makeSUT(answers: [answer])
-        let cell = sut.tableView.cell(at: 0) as! CorrectAnswerCell
         
-        XCTAssertEqual(cell.answerLabel.text, "A1")
+        XCTAssertNotNil(cell)
+        XCTAssertEqual(cell?.questionLabel.text, "Q1")
+        XCTAssertEqual(cell?.answerLabel.text, "A1")
+    }
+    
+    func test_viewDidLoad_withWrongAnswer_configuresCell() {
+        let answer = makeAnswer(question: "Q1", answer: "A1", isCorrect: false)
+        let sut = makeSUT(answers: [answer])
+        let cell = sut.tableView.cell(at: 0) as? WrongAnswerCell
+        
+        XCTAssertNotNil(cell)
+        XCTAssertEqual(cell?.questionLabel.text, "Q1")
+        XCTAssertEqual(cell?.correctAnswerLabel.text, "A1")
     }
          
-    func test_viewDidLoad_withWrongAnswer_renderWrongAnswerCall() {
+    func test_viewDidLoad_withWrongAnswer_renderWrongAnswerCell() {
         let sut = makeSUT(answers: [makeAnswer(isCorrect: false)])
 
         let cell = sut.tableView.cell(at: 0) as? WrongAnswerCell
